@@ -94,6 +94,8 @@ describe Producto;
 insert into Producto values(1, 'Shampoo', 'pets', 10500, 29302821, 2), (2, 'Rascador', 'pets', 15300, 29302821, 3);
 select * from Producto;
 
+describe Cliente;
+
 describe detalle_vacuna; 
 insert into detalle_vacuna values(11211, 1, 'desparacitante');
 insert into detalle_vacuna values(11212, 2, 'gripa');
