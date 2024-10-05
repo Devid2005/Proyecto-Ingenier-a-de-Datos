@@ -1,9 +1,10 @@
--- 1
+-- 1. Crear la base de datos
 CREATE DATABASE TiendaOnline;
--- 2
+
+-- 2. Usar la base de datos
 USE TiendaOnline;
 
--- 3
+-- 3. Crear tablas
 CREATE TABLE Producto(
     codigoBarras INT(15) AUTO_INCREMENT PRIMARY KEY,
     nombreProducto VARCHAR(15),
@@ -42,6 +43,7 @@ CREATE TABLE Ventas_Producto(
     cantidad INT(11)
 );
 
+-- 4. Definir relaciones (Foreign Keys)
 ALTER TABLE Ventas
 ADD CONSTRAINT FKClienteVenta
 FOREIGN KEY (idClienteFK)
@@ -62,7 +64,7 @@ ADD CONSTRAINT FKVentas_Producto_Venta
 FOREIGN KEY (idVentasFK)
 REFERENCES Ventas(idVentas);
 
--- Insertar valores iniciales
+-- 5. Insertar valores iniciales
 INSERT INTO Cliente (idCliente, nombreCliente, fechaNacimiento) 
 VALUES (1, 'Maria', '2008-12-19'), 
        (2, 'Sandra', '1979-04-24'), 
@@ -95,7 +97,7 @@ VALUES (112, 3, 42.000, 2),
        (114, 1, 31.000, 1),
        (115, 2, 230.000, 4);
 
--- Crear procedimientos
+-- 6. Crear procedimientos
 
 -- Procedimiento para inactivar un cliente
 DELIMITER //
@@ -125,7 +127,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Crear vistas
+-- 7. Crear vistas
 
 -- Vista para consultar qué cliente compró un producto y su número de orden
 CREATE VIEW Cliente_Producto_Orden AS
@@ -143,6 +145,37 @@ INNER JOIN Ventas V ON C.idCliente = V.idClienteFK
 GROUP BY C.idCliente
 ORDER BY total_compras DESC
 LIMIT 1;
+
+-- 8. Tareas solicitadas
+
+-- a) Calcular los productos vendidos a un precio mayor que el promedio de todos los productos
+SELECT nombreProducto, precioProducto 
+FROM Producto
+WHERE precioProducto > (SELECT AVG(precioProducto) FROM Producto);
+
+-- b) Mostrar los clientes cuyo total de compras sea mayor al promedio de todas las compras de la tienda
+SELECT C.nombreCliente, SUM(P.precioProducto * VP.cantidad) AS total_compras 
+FROM Cliente C
+INNER JOIN Ventas V ON C.idCliente = V.idClienteFK
+INNER JOIN Ventas_Producto VP ON V.idVentas = VP.idVentasFK
+INNER JOIN Producto P ON VP.codigoBarrasFK = P.codigoBarras
+GROUP BY C.idCliente
+HAVING total_compras > (SELECT AVG(total_compras)
+                        FROM (SELECT SUM(P.precioProducto * VP.cantidad) AS total_compras
+                              FROM Ventas V
+                              INNER JOIN Ventas_Producto VP ON V.idVentas = VP.idVentasFK
+                              INNER JOIN Producto P ON VP.codigoBarrasFK = P.codigoBarras
+                              GROUP BY V.idClienteFK) AS subquery);
+
+-- c) Mostrar el promedio de precios de productos comprados por un cliente
+SELECT C.nombreCliente, AVG(P.precioProducto) AS promedio_precio_productos
+FROM Cliente C
+INNER JOIN Ventas V ON C.idCliente = V.idClienteFK
+INNER JOIN Ventas_Producto VP ON V.idVentas = VP.idVentasFK
+INNER JOIN Producto P ON VP.codigoBarrasFK = P.codigoBarras
+WHERE C.idCliente = [clienteID]  -- Reemplaza [clienteID] por el ID del cliente que quieras consultar
+GROUP BY C.idCliente;
+
 
 -- Clase 2 de octubre
 -- manipulacion es delete , default (estado dentro de la tabla cliente true or false boolean) 
@@ -166,6 +199,8 @@ from empleado;
 select nombreEmpleado,idEmpleado ,salario,(select avg(salario)
 from empleado) as promedio
 from empleado;
+
+
 
 
 
