@@ -316,7 +316,11 @@ JOIN Cliente C ON G.IdClienteFK = C.IdCliente
 JOIN Provedor P ON G.HarmonizedCodeFK = P.NombreProducto
 WHERE G.FechaCompraCliente = '2024-09-21';
 delete from Cliente where IdCliente = 'DSE99';
+use solacom;
+create view ConsultarCliente as select * from Cliente;
+create view ConsultarProducto as select * from Producto;
+create view ConsultarServicio as select * from Servicio;
 
-
+select IdCliente,NombreCliente from Cliente where Correo like '%gmail%';
 
 
