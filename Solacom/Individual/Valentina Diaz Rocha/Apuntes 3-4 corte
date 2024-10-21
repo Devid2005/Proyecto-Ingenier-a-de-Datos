@@ -1,0 +1,66 @@
+/* Bases de datos relacionales desencadenador (Eventos\ Triggers) ,
+cojunto de instrucciones sql que generan una accion 
+suceden como respuesta a una operacion (insert,select , uptade,delete)
+
+       Sintaxis 
+Create TRIGGER nombre_trigger
+{before|after}{insert|select|uptade|delete}
+on nombre_tabla 
+for each row 
+begin 
+--- Instrucciones de sql 
+end;
+
+Variables old y new (acceder a registros)
+New:Al nuevo valor que se va a insertar o modificar 
+Old: El valor anterior 
+
+Ejemplo
+create trigger registrar_cambio
+before insert on producto
+for each row 
+begin 
+  if new.precio <0 then
+	 signal sqlstate '45000'
+	 set message_text ='El precio no es valido'
+  end if;
+end;
+
+--actualiza nivel y localidad de usuario (elimina el anterio)
+create trigger registrar_cambio
+after uptade on empleado 
+for each row 
+begin 
+  insert into historial_cambios values(old.id,old,nombre,new.nombre,now());
+end;
+
+-- actualiza el stock 
+create trigger actualizar_inventario
+after insert on ventas 
+for each row 
+begin 
+	uptade inventario
+	set cantidad = cantidad-new.cantidad_vendida
+     where idProducto = new.idProducto;
+end;
+
+-- papelera 
+create trigger registro_papelera
+before delete on usuarios
+for each row 
+begin 
+	insert into usuariosEliminados values (old.id,old.nombre,old.apellido,old.telfono,now());
+end;
+
+
+
+-- Notas
+corregir sentencias dml ( ajustar requisitos funcionales) hacer modelo  logico
+diagrama de clases (mer) modelo relacional , crear la tabla usuario en el diagrama de clases , hacer procedimientos para insercion ,
+proxima entrega *Crear archivo etl 
+bases de datos relacional corregir
+entrega 4 visualizacion - Buscar servidor para almacenar base de datos (Power BIA ) que dejen conectarse a servidores locales 
+
+hacer una tabla de backup (trigger)
+
+*/
