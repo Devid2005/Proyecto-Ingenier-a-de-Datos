@@ -1,0 +1,140 @@
+--1 Generar Estado pedido (Cambiar estadao Pedido , Ajustar Stock con compras o ventas)
+CREATE TRIGGER actualizar_estado_pedido
+AFTER UPDATE ON pedidos
+FOR EACH ROW 
+BEGIN
+  IF NEW.estado = 'Cedido' THEN
+    UPDATE inventario
+    SET cantidad = cantidad + NEW.cantidad_comprada
+    WHERE idProducto = NEW.idProducto;
+  END IF;
+END;
+
+-- 2 Ajustar Stcok de productos  (ajustar stock de contenedores, ajustar inventario productos y caja)
+CREATE TRIGGER ajustar_inventario
+AFTER INSERT ON ventas
+FOR EACH ROW 
+BEGIN
+  -- Ajustar stock del producto
+  UPDATE productos
+  SET stock = stock - NEW.cantidad_vendida
+  WHERE idProducto = NEW.idProducto;
+
+  -- Ajustar stock del contenedor
+  UPDATE contenedores
+  SET stock_contenedor = stock_contenedor - NEW.cantidad_vendida
+  WHERE idContenedor = NEW.idContenedor;
+
+  -- Actualizar inventario general
+  UPDATE inventario
+  SET total_productos = total_productos - NEW.cantidad_vendida;
+END;
+
+-- 3 Ajustar stock  x venta -> Cliente , x compra ->Provedor 
+CREATE TRIGGER ajustar_stock_por_venta
+AFTER INSERT ON ventas
+FOR EACH ROW 
+BEGIN
+  -- Ajustar stock por venta
+  UPDATE productos
+  SET stock = stock - NEW.cantidad_vendida
+  WHERE idProducto = NEW.idProducto;
+  
+  -- Ajustar stock por compra
+  UPDATE productos
+  SET stock = stock + NEW.cantidad_comprada
+  WHERE idProducto = NEW.idProducto;
+END;
+
+-- 4 Ajustar precio pendiente poliza 
+CREATE TRIGGER ajustar_precio_pendiente
+AFTER UPDATE ON polizas
+FOR EACH ROW 
+BEGIN
+  IF NEW.estado = 'Pendiente' THEN
+    UPDATE productos
+    SET precio = precio - NEW.descuento
+    WHERE idProducto = NEW.idProducto;
+  END IF;
+END;
+
+-- 5 Ajustar stock x venta , x compra 
+CREATE TRIGGER ajustar_stock_venta_compra
+AFTER INSERT ON ventas
+FOR EACH ROW 
+BEGIN
+  -- Ajustar stock por venta
+  UPDATE productos
+  SET stock = stock - NEW.cantidad_vendida
+  WHERE idProducto = NEW.idProducto;
+  
+  -- Ajustar stock por compra
+  UPDATE productos
+  SET stock = stock + NEW.cantidad_comprada
+  WHERE idProducto = NEW.idProducto;
+END;
+
+-- 6 Actualizar nivel y localidad (elimina el anterior ) ( backup)
+CREATE TRIGGER actualizar_usuario
+AFTER UPDATE ON usuarios
+FOR EACH ROW 
+BEGIN
+  UPDATE usuarios
+  SET nivel = NEW.nivel,
+      localidad = NEW.localidad
+  WHERE idUsuario = NEW.idUsuario;
+END;
+
+-- 7 Cambiar estado de reserva 
+CREATE TRIGGER cambiar_estado_reserva
+AFTER UPDATE ON reservas
+FOR EACH ROW 
+BEGIN
+  IF NEW.estado = 'Completada' THEN
+    UPDATE reservas
+    SET estado = 'Finalizada'
+    WHERE idReserva = NEW.idReserva;
+  END IF;
+END;
+
+-- 8 Eliminar provedor eliminar productos (backup)
+CREATE TRIGGER eliminar_proveedor_productos
+BEFORE DELETE ON proveedores
+FOR EACH ROW 
+BEGIN
+  DELETE FROM productos
+  WHERE idProveedor = OLD.idProveedor;
+END;
+
+--9 Si hay venta ajustar Stock (registar cliente solicite la compra que se hace)
+CREATE TRIGGER ajustar_stock_registrar_cliente
+AFTER INSERT ON ventas
+FOR EACH ROW 
+BEGIN
+  -- Ajustar stock
+  UPDATE productos
+  SET stock = stock - NEW.cantidad_vendida
+  WHERE idProducto = NEW.idProducto;
+  
+  -- Registrar cliente
+  INSERT INTO historial_compras (idCliente, idProducto, fecha_compra)
+  VALUES (NEW.idCliente, NEW.idProducto, NOW());
+END;
+
+-- 10 Evitar contratos duplicados 
+CREATE TRIGGER evitar_contratos_duplicados
+BEFORE INSERT ON contratos
+FOR EACH ROW 
+BEGIN
+  DECLARE contrato_existente INT;
+  
+  SELECT COUNT(*) INTO contrato_existente
+  FROM contratos
+  WHERE idCliente = NEW.idCliente
+  AND idProveedor = NEW.idProveedor;
+
+  IF contrato_existente > 0 THEN
+    SIGNAL SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'Contrato duplicado, no se puede insertar.';
+  END IF;
+END;
