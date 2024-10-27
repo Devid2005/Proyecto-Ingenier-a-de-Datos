@@ -1,0 +1,1000 @@
+ID Empresa;Nombre de la Empresa;Dirección de Empresa/Entreg;Correo electrónic;estado
+NT001;NovaTech Solutions;123 Silicon Valley Blvd, San Francisco, CA;nova.tech@gmail.com;1
+QL002;QuantumLeap Inc.;456 Innovation Drive, Toronto, ON;quantum@hotmail.com;1
+NSE003;NorthStar Enterprises;789 Main Street, Seattle, WA;northS@gmail.com;1
+CSC004;CyberShield Corp.;110 Cyber Avenue, Ottawa, ON;cyberShield@gmail.com;1
+DS005;DataStream Inc.;220 Data Drive, Vancouver, BC;datas@gmail.com;1
+NSE009;Biotech Toronto;150 Elgin Street, Suite 800, Ottawa, ON K2P 1L4, Canada;biotech@gmail.com;1
+DSE98;GreenTech Seattle;5th Floor, 111 East 5th Avenue, Vancouver, BC V5T 1G4, Canada;greentech@gmail.com;1
+DSE99;Ryerson AI;1910 Avenue 1, Suite 200, Montreal, QC H3A 2R6, Canada;reyersonAI@gmail.com;1
+DSE100;WinterLight Labs;275 Frank Tompa Drive, Waterloo, ON N2L 0A1, Canada;winterl@gmail.com;1
+DSE101;Kindred Systems;3500 Carling Avenue, Suite 100, Ottawa, ON K2H 8T5, Canada;Kindred@gmail.com;1
+DSE102;ZoomInfo;1000 - 1005 W 17th Avenue, Vancouver, BC V6H 1A5, Canada;Zoomn@gmail.com;1
+DSE103;Asana;2200 University Avenue E, Waterloo, ON N2K 0A7, Canada;Asana@gmail.com;1
+DSE104;PagerDuty;1500 Don Mills Road, Suite 400, Ottawa, ON K4A 3Z5, Canada;Pager@gmail.com;1
+DSE105;Evernote;25, 2300 René-Lévesque Blvd W, Montreal, QC H3H 2T8, Cana;Evernote@gmail.com;1
+DSE106;DuckDuckGo;2300-100 Toronto, ON M5J 1V6, Canada;contact@duckduckgo.com;1
+DSE107;Mailchimp;Av. México 83, Colonia Hipódromo, 06100 Ciudad de México, CDMX, Mé;support@mailchimp.com;1
+DSE108;Squarespace;Av. José María Pino Suárez 60, Centro Histórico, 06060 Ciudad de México, CDMX, M;support@squarespace.com;1
+DSE109;Box;699 8th St, San Francisco, CA 94103, USA;support@box.com;1
+DSE110;HubSpot;401- 119 West Pender Street, Vancouver, BC V6B 1S5, Canada;support@hubspot.com;1
+DSE111;Plaid;399 11th St, San Francisco, CA 94103, USA;support@plaid.com;1
+DSE112;Robinhood;699 8th St, San Francisco, CA 94103, USA;support@robinhood.com;1
+DSE113;GitHub;2850 3rd St, San Francisco, CA 94107, USA;support@github.com;1
+DSE114;Coursera;197 Spadina Ave, Suite 600, Toronto, ON M5T 2C1, Canada;support@coursera.org;1
+DSE115;Wix (Israel, pero con operaciones en América del Norte;3300 E 1st Ave, Denver, CO 80205, USA;support@wix.com;1
+DSE116;Trello;900 Jefferson Ave, Redwood City, CA 94063, USA;contact@trello.com;1
+DSE117;Kio Networks;650 Castro St, Mountain View, CA 94041, USA;info@kionetworks.com;1
+DSE118;Bitso;25 First Street, Cambridge, MA 02141, USA;soporte@bitso.com;1
+DSE119;Clip;501 W 15th St, Austin, TX 78701, USA;contacto@clip.mx;1
+DSE120;Konfio;600 Harrison St, Suite 200, San Francisco, CA 94107, USA;contacto@konfio.mx;1
+DSE121;Conekta;1100 Marietta St NW, Atlanta, GA 30318, USA;support@conekta.com;1
+DSE122;Rappi;85 Willow Road, Menlo Park, CA 94025, USA;soporte@rappi.com;1
+DSE123;OXXO;1390 Market St, San Francisco, CA 94102, USA;contacto@oxxo.com;1
+DSE124;Kavak;12655 W 64th Ave, Suite 200, Arvada, CO 80004, USA;contacto@kavak.com;1
+DSE125;B2B Media;1750 Zanker Rd #100, San Jose, CA 95112, USA;contacto@b2bmedia.mx;1
+DSE126;Kubo Financiero;400 W 15th St, Austin, TX 78701, USA;contacto@kubofinanciero.com;1
+DSE127;Auronix;2300 W 17th St, San Francisco, CA 94107, USA;contacto@auronix.com;1
+DSE128;500 Startups;7400, 1er Avenue, Suite 300, Québec, QC G1H 7C1, Canad;info@500.co;1
+DSE129;Ginkgo;244 2nd St, San Francisco, CA 94105, USA;contact@ginkgobioworks.com;1
+DSE130;Payit;1215 St-Alexandre St #300, Montreal, QC H3B 3H4, Canada;info@payit.com;1
+DSE131;Dev.F;1515 Rue Saint-Antoine O, Suite 400, Montreal, QC H3C 2S2, Canada;info@dev.f;1
+DSE132;;460 Speedvale Ave E, Guelph, ON N1E 1P1, Canada;support@shopify.com;1
+DSE133;Hootsuite;325 Front St W, Toronto, ON M5V 2Y1, Canada;support@hootsuite.com;1
+DSE134;Slack Technologies;1600-1177 11th Ave SW, Calgary, AB T2R 1K3, Canada;feedback@slack.com;1
+DSE135;OpenText;1300-200 Granville St, Vancouver, BC V6C 1S4, Canada;info@opentext.com;1
+DSE136;Ceridian;1600-1177 11th Ave SW, Calgary, AB T2R 1K3, Canada;info@ceridian.com;1
+DSE137;Mitel Networks;5600-1000 Sherbrooke St W, Montreal, QC H3A 3R2, Canada;contact@mitel.com;1
+DSE138;Coveo;501 W 15th St, Austin, TX 78701, USA;info@coveo.com;1
+DSE139;Absolute Software;103 5th Ave, New York, NY 10003, USA;info@absolute.com;1
+DSE140;Blackberry;1515 Rue Saint-Antoine O, Suite 400, Montreal, QC H3C 2S2, Canada;info@blackberry.com;1
+DSE141;Kinaxis;1010 Rue Galt E, Sherbrooke, QC J1G 1X5, Canada;info@kinaxis.com;1
+DSE142;Lightspeed Commerce;1500 - 1000 St. Laurent Blvd, Montreal, QC H2X 2S9, Canada;contact@lightspeedhq.com;1
+DSE143;Constellation Software;2800 3rd St, San Francisco, CA 94107, USA;info@csw.com;1
+DSE144;FreshBooks;150 W 13th St, New York, NY 10011, USA;support@freshbooks.com;1
+DSE145;Bench;69. 1500 - 1000 St. Laurent Blvd, Montreal, QC H2X 2S9, Canada;support@bench.co;1
+DSE146;Clio;5700 W 11th St, Los Angeles, CA 90011, USA;support@clio.com;1
+DSE147;Descartes Systems Group;1000 E 1st St, Los Angeles, CA 90012, USA;info@descartes.com;1
+DSE148;Nuvei;125 E 11th St, New York, NY 10003, USA;contact@nuvei.com;1
+DSE149;Clearco;101 N. 5th St, Philadelphia, PA 19106, USA;support@clear.co;1
+DSE150;Wealthsimple;3031 N 14th St, Lincoln, NE 68521, USA;help@wealthsimple.com;1
+DSE151;Thinkific;3200 E Camelback Rd #240, Phoenix, AZ 85018, USA;support@thinkific.com;1
+DSE152;Vidyard;600 S 2nd St, Minneapolis, MN 55401, USA;info@vidyard.com;1
+DSE153;Auvik Networks;2001 S. 16th St, San Francisco, CA 94103, USA;support@auvik.com;1
+DSE154;D2L;5700 W 11th St, Los Angeles, CA 90011, USA;support@d2l.com;1
+DSE155;Benevity;1200 W 4th St, Austin, TX 78703, USA;info@benevity.com;1
+DSE156;Unbounce;3031 N 14th St, Lincoln, NE 68521, USA;support@unbounce.com;1
+DSE157;Element AI;5500 W 2nd St, Santa Ana, CA 92703, USA;info@elementai.com;1
+DSE158;WealthBar;3131 S 10th St, San Jose, CA 95112, USA;support@wealthbar.com;1
+DSE159;Wave Financial;1201 S. Orange Ave, Orlando, FL 32806, USA;support@waveapps.com;1
+DSE160;GSoft;707 E 15th St, Austin, TX 78701, USA;info@gsoft.com;1
+DSE161;Plooto;150 W 13th St, New York, NY 10011, USA;support@plooto.com;1
+DSE162;Dapper Labs (desarrollo de tecnología blockchain y NFT;1515 Rue Saint-Antoine O, Suite 400, Montreal, QC H3C 2S2, Canada;info@dapperlabs.com;1
+DSE163;Tribe (plataforma de comunidades online);1000 E 1st St, Los Angeles, CA 90012, USA;support@tribe.so;1
+DSE164;Plooto (software de gestión de pagos;3200 E Camelback Rd #240, Phoenix, AZ 85018, USA;hello@crisp.co;1
+DSE165;Crisp (plataforma de análisis de datos para restaurantes;1201 W 10th St, Los Angeles, CA 90015, USA;info@ada.support;1
+DSE166;Ada (plataforma de automatización de atención al client;401- 119 West Pender Street, Vancouver, BC V6B 1S5, Canada;info@loom.ai;1
+DSE167;Loom.ai (tecnología de creación de avatares en 3;5000 N Central Ave, Phoenix, AZ 85012, USA;contactus@zynga.com;1
+DSE168;Zynga (juegos sociales);197 Spadina Ave, Suite 600, Toronto, ON M5T 2C1, Canada;hello@foko.com;1
+DSE169;Foko (software de gestión de contenido para empresas;1775 19th St NW, Washington, DC 20009, USA;info@jibestream.com;1
+DSE170;Unbounce (herramientas para crear landing pages);5775 16th Avenue, Suite 210, Vancouver, BC V5Y 1A5, Canada;support@calendly.com;1
+DSE171;Jibestream (soluciones de mapeo en interiores);2020 S. 7th St, Philadelphia, PA 19148, USA;hello@makenotion.com;1
+DSE172;Calendly (herramienta de programación de citas;85 Willow Road, Menlo Park, CA 94025, USA;support@gumroad.com;1
+DSE173;Notion (plataforma de gestión de proyectos y notas;6100 W 104th Ave, Westminster, CO 80020, USA;contact@substack.com;1
+DSE174;Gumroad (plataforma de venta de productos digitales);675 Ponce de Leon Ave NE, Suite 5000, Atlanta, GA 30308, USA;support@sift.com;1
+DSE175;Substack (plataforma de newsletters);101 N. 5th St, Philadelphia, PA 19106, USA;support@airtable.com;1
+DSE176;Sift (soluciones de gestión de fraude;Av. Revolución 1310, Colonia San Angel, 01000 Ciudad de México, CDMX, Méx;support@zapier.com;1
+DSE177;Airtable (plataforma de bases de datos flexibles);1700 E 18th St, Austin, TX 78702, USA;help@figma.com;1
+DSE178;Zapier (automatización de tareas entre aplicaciones;1500 Don Mills Road, Suite 400, Ottawa, ON K4A 3Z5, Canada;hello@buffer.com;1
+DSE179;Figma (herramienta de diseño colaborativo;600 S 2nd St, Minneapolis, MN 55401, USA;support@loom.com;1
+DSE180;Buffer (gestión de redes sociales;275 Frank Tompa Drive, Waterloo, ON N2L 0A1, Canada;hello@yalo.com;1
+DSE181;Loom (herramienta de grabación de video;2425 W 26th St, Chicago, IL 60623, USA;contacto@kueski.com;1
+DSE182;Yalo (plataforma de automatización de ventas y atención al client;150 Elgin Street, Suite 800, Ottawa, ON K2P 1L4, Canada;contacto@jisto.mx;1
+DSE183;Kueski (fintech de préstamos en líne;1000 S 10th St, San Jose, CA 95112, USA;hola@albo.mx;1
+DSE184;Conekta (soluciones de pago);1000 N. 4th St. Suite 300, Austin, TX 78703, USA;conekta@conecta.com;1
+DSE185;Jüsto (plataforma de comercio electrónic;27 Drydock Ave, Boston, MA 02210, USA;justo@justo.com;1
+DSE186;Albo (banco digital);1201 S. Orange Ave, Orlando, FL 32806, USA;albo@albo.com;1
+DSE187;Morgan County EMA;60S Fourth St McConnelsville OH 43756;911coordinator@morgancounty-oh.gov;1
+DSE188;Lincoln County Sheriffs Office;512 California Avenue Libby MT 59923 USA;bfaulkner@lcsomt.us;1
+DSE189;ELLSOUTH TELECOMMUNICATIONS INC(Opelika AL);1819 Pepperrell Pkwy Suite 203;mz7001@att.com;1
+DSE190;Harrison County Sheriffs Office;978 E.Market St Cadiz OH 43907 USA;ewilson@harrisoncountyohio.org;1
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
