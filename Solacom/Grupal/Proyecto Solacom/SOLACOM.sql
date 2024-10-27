@@ -132,7 +132,7 @@ ALTER TABLE Usuario
 drop column ApellidoUsuario;
 
 insert into Provedor values('1','Pallets'),('2','Dell position boxes'),('3','Dell Mobile position'),('4','Cisco Box Labeled'),('5','Solacom Box Labeled');
-
+use solacom;
 select * from Usuario;
 select * from Cliente;
 select * from Producto;
@@ -144,8 +144,166 @@ select * from Pedido_Provedor;
 select * from Pedido_Producto_Cliente;
 select * from Compra_a_Provedor;
 
+delete from usuario where IdUsuario > 107;
+
+DELIMITER //
+create procedure RegistrarCliente(IdCliente varchar(30),Nombre varchar(30),DireccionCliente varchar(100),correo varchar(100),estadoCliente bool)
+begin 
+insert into Cliente values(IdCliente,Nombre,DireccionCliente,correo,estadoCliente);
+end//
+DELIMITER ;
+
+DELIMITER //
+create procedure RegistarProvedor(IdProvedor varchar(25),NombreProvedor varchar(50))
+begin
+insert into Provedor values(IdProvedor,NombreProvedor);
+end//
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE DetalleCompraCliente(IdClienteParam VARCHAR(30))
+BEGIN
+    SELECT 
+        pc.IdPedidoC AS PedidoID,
+        pc.FechaPedido AS Fecha,
+        c.Dirección AS Direccion,
+        ppc.HarmonizedCodeFK AS CodigoProducto,
+        pr.NombreProducto AS Producto,
+        ppc.Cantidad AS Cantidad,ppc.PrecioProductoFK AS Precio
+    FROM 
+        Pedido_Cliente pc
+    INNER JOIN 
+        Cliente c ON pc.IdClienteFK = c.IdCliente
+    INNER JOIN 
+        Pedido_Producto_Cliente ppc ON pc.IdPedidoC = ppc.IdPedidoCFK
+    INNER JOIN 
+        Producto pr ON ppc.HarmonizedCodeFK = pr.HarmonizedCode
+    WHERE 
+        c.IdCliente = IdClienteParam;
+END //
+DELIMITER ;
+
+drop procedure DetalleCompraCliente;
+call DetalleCompraCliente('DSE103');
+
+DELIMITER //
+CREATE PROCEDURE GenerarPedido_Cliente(IdPedidoC int,fecha date,IdClienteFK varchar(25),IdUsuarioFK int)
+BEGIN
+insert into Pedido_Cliente values (IdPedidoC,fecha,IdClienteFK,IdUsuarioFK);
+END//
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE Generar_Pedido_Producto_Cliente(HarmonizedCodeFK varchar(25),IdPedidoCFK int,PrecioProductoFK float,Cantidad int)
+BEGIN
+insert into Pedido_Producto_Cliente values (HarmonizedCodeFK,IdPedidoCFK,PrecioProductoFK,Cantidad);
+END//
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE GenerarPedido_Provedor(IdPedidoP int,fecha date,IdProvedorFK varchar(25),IdUsuarioFK int)
+BEGIN
+insert into Pedido_Provedor values (IdPedidoP,fecha,IdProvedorFK,IdUsuarioFK);
+END//
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE Generar_Compra_a_Provedor(HarmonizedCodeFK varchar(25),IdPedidoPFK int,PrecioProductoFK float,Cantidad int)
+BEGIN
+insert into Compra_a_Provedor values (HarmonizedCodeFK,IdPedidoPFK,PrecioProductoFK,Cantidad);
+END//
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE Precio_Producto(Nombre_Producto varchar(25))
+BEGIN
+select NombreProducto,PrecioProducto From Producto where NombreProducto = Nombre_Producto;
+END//
+DELIMITER ;
+
+select * from Producto;
+call Precio_Producto('CREATIVE Speackers-A50');
+
+DELIMITER //
+CREATE PROCEDURE ObtenerFacturaCliente(IN IdClienteParam VARCHAR(30))
+BEGIN
+    SELECT 
+        c.IdCliente AS ClienteID,
+        c.NombreCliente AS Nombre,
+        c.Dirección AS Direccion,
+        c.Correo AS Correo,
+        pc.IdPedidoC AS PedidoID,
+        pc.FechaPedido AS FechaPedido,
+        pr.NombreProducto AS Producto,
+        ppc.Cantidad AS Cantidad,
+        ppc.PrecioProductoFK AS PrecioUnitario,
+        (ppc.Cantidad * ppc.PrecioProductoFK) AS TotalProducto
+    FROM Cliente c
+    INNER JOIN Pedido_Cliente pc ON c.IdCliente = pc.IdClienteFK
+    INNER JOIN Pedido_Producto_Cliente ppc ON pc.IdPedidoC = ppc.IdPedidoCFK
+    INNER JOIN Producto pr ON ppc.HarmonizedCodeFK = pr.HarmonizedCode
+    WHERE c.IdCliente = IdClienteParam;
+END //
+DELIMITER ;
+
+call ObtenerFacturaCliente('DSE104');
+
+DELIMITER //
+CREATE PROCEDURE ObtenerFacturaProvedor(IN IdUsuarioParam VARCHAR(30))
+BEGIN
+    SELECT 
+        U.IdUsuario AS UsuarioID,
+        U.NombreUsuario AS Nombre,
+        U.EmailUsuario AS Correo,
+        pp.IdPedidoP AS PedidoID,
+        pp.FechaPedido AS FechaPedido,
+        pr.NombreProducto AS Producto,
+        ccp.Cantidad AS Cantidad,
+        ccp.PrecioProductoFK AS PrecioUnitario,
+        (ccp.Cantidad * ccp.PrecioProductoFK) AS TotalProducto
+    FROM Usuario U
+    INNER JOIN Pedido_Provedor pp ON U.IdUsuario = pp.IdUsuarioFK
+    INNER JOIN Compra_a_Provedor ccp ON pp.IdPedidoP = ccp.IdPedidoPFK
+    INNER JOIN Producto pr ON ccp.HarmonizedCodeFK = pr.HarmonizedCode
+    WHERE U.IdUsuario = IdUsuarioParam;
+END //
+DELIMITER ;
+
+select * from Usuario;
+call ObtenerFacturaProvedor('106');
+
+CREATE VIEW ClienteMasCompras AS
+SELECT 
+    c.IdCliente AS ClienteID,
+    c.NombreCliente AS Nombre,
+    c.Dirección AS Direccion,
+    c.Correo AS Correo,
+    COUNT(pc.IdPedidoC) AS NumeroDePedidos
+FROM Cliente c
+INNER JOIN Pedido_Cliente pc ON c.IdCliente = pc.IdClienteFK
+GROUP BY c.IdCliente, c.NombreCliente, c.Dirección, c.Correo
+ORDER BY NumeroDePedidos DESC;
+
+SELECT * FROM ClienteMasCompras;
+
+CREATE VIEW ClientesActivos AS
+SELECT IdCliente,NombreCliente,Dirección,Correo
+FROM Cliente
+WHERE estadoCliente = TRUE;
+
+SELECT * FROM ClientesActivos;
+
+SELECT pc.IdPedidoC AS PedidoID,pc.FechaPedido AS FechaPedido,c.IdCliente AS ClienteID,c.NombreCliente AS NombreCliente,
+	c.Dirección AS Direccion,c.Correo AS Correo,SUM(ppc.Cantidad) AS TotalProductos
+FROM Pedido_Cliente pc
+INNER JOIN Cliente c ON pc.IdClienteFK = c.IdCliente
+INNER JOIN Pedido_Producto_Cliente ppc ON pc.IdPedidoC = ppc.IdPedidoCFK
+WHERE c.IdCliente = (SELECT IdCliente FROM Pedido_Cliente GROUP BY IdCliente ORDER BY COUNT(IdPedidoC) DESC)
+GROUP BY pc.IdPedidoC, c.IdCliente, c.NombreCliente, c.Dirección, c.Correo;
+
+/*
 create trigger validar_precio
-after insert on producto
+after insert onStored Procedures producto
 for each row
 begin
 	if new.precioProducto <= 0 then
@@ -157,7 +315,8 @@ create trigger actualizar_stock
 after insert on Pedido_Producto_Cliente
 for each row
 begin
-update inventario
+update Compra_a_Cliente
 set cantidad = cantidad - new.cantidad_vendida
-where idProducto = new.idProducto;
+where HarmonizedCode = new.HarmonizedCode;
 end;
+*/
