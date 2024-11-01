@@ -1,0 +1,19 @@
+Clase de mongo 
+
+13-15 sustentación 3
+
+modelamiento de base de datos no relacional 
+arquitectura de base no relacional 
+que tipo de base de datos no relacional se va a realizar y (explicar creación)
+enlazar en un tablero 
+
+
+NOTAS 4-5 
+todo el modelamiento visualizado en un tablero (para cada una de las base de datos )PowerBI
+
+
+escoger 5 requisitos Funcionales de los que se tiene de la base de datos 
+ajustar los requisitos funcionales corresponden a (los procesos que se realizan en las bases de datos )  (HACER ESOS REGISTROS)(EN BASE DE DATOS RELACIONAL, mecanismos de inserción ) (consultar, por bases de datos sql y nsql)
+(según sus necesidades )
+
+25-27 sustentación 4
