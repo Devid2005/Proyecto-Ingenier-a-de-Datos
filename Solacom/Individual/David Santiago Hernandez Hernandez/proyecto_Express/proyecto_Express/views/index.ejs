@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <table border="1" id="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Foto</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Correo</th>
+          <th>Rol</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% usuarios.forEach(function(usuario){ %>
+        <tr>
+          <td><%= usuario._id %></td>
+          <td>
+            <img
+              class="photo"
+              width="38"
+              src="https://ui-avatars.com/api/?name=<%= usuario.name %>+<%= usuario.lastname %>?background=random"
+              alt=""
+            />
+          </td>
+          <td><%= usuario.name %></td>
+          <td><%= usuario.lastname %></td>
+          <td><%= usuario.email %></td>
+          <td><%= usuario.role %></td>
+        </tr>
+        <% })%>
+      </tbody>
+    </table>
+  </body>
+</html>
