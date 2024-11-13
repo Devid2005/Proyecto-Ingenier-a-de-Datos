@@ -1,0 +1,237 @@
+use tallerMongodb
+switched to db tallerMongodb
+db.createCollection('usuarios')
+{ ok: 1 }
+db.usuarios.insertMany([
+  {nombre:"Juan Perez",edad:30,correo:"juan.perez@urosario.com"},
+  {nombre:"Ana Lopez",edad:25,correo:"ana.lopez@urosario.com"},
+  {nombre:"Luis Torres", edad:35,correo:"luis.torres@urosaio.com"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('672ff279f05c8eaddfb4d241'),
+    '1': ObjectId('672ff279f05c8eaddfb4d242'),
+    '2': ObjectId('672ff279f05c8eaddfb4d243')
+  }
+}
+db.usuarios.find()
+{
+  _id: ObjectId('672ff279f05c8eaddfb4d241'),
+  nombre: 'Juan Perez',
+  edad: 30,
+  correo: 'juan.perez@urosario.com'
+}
+{
+  _id: ObjectId('672ff279f05c8eaddfb4d242'),
+  nombre: 'Ana Lopez',
+  edad: 25,
+  correo: 'ana.lopez@urosario.com'
+}
+{
+  _id: ObjectId('672ff279f05c8eaddfb4d243'),
+  nombre: 'Luis Torres',
+  edad: 35,
+  correo: 'luis.torres@urosaio.com'
+}
+db.usuarios.find({edad:{$gte:30}})
+{
+  _id: ObjectId('672ff279f05c8eaddfb4d241'),
+  nombre: 'Juan Perez',
+  edad: 30,
+  correo: 'juan.perez@urosario.com'
+}
+{
+  _id: ObjectId('672ff279f05c8eaddfb4d243'),
+  nombre: 'Luis Torres',
+  edad: 35,
+  correo: 'luis.torres@urosaio.com'
+}
+db.usuarios.updateOne({name:"Juan Perez"},{$set:{edad:31}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.usuarios.updateMany({edad:{$gte:30}},{$set:{activo:true}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+db.usuario.deleteOne({nombre:"Luis Torres"})
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+db.usuarios.deleteMany({edad:{$lt:30}})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.productos.insertMany([
+  {nombre:"Adidasforum",precio:3500,categoria:"Zapatillas"},
+  {nombre:"Top deportivo",precio:50,categoria :"Sportwear"},
+  {nombre:"Camiseta terrex",precio:80,categoria:"Sportwear"},
+  {nombre: "Garmin forerunner",precio:500,categoria:"Tecnologia"},
+  {nombre:"Coros Pace",precio:450,categoria:"Tecnologia"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('672ff5bff05c8eaddfb4d244'),
+    '1': ObjectId('672ff5bff05c8eaddfb4d245'),
+    '2': ObjectId('672ff5bff05c8eaddfb4d246'),
+    '3': ObjectId('672ff5bff05c8eaddfb4d247'),
+    '4': ObjectId('672ff5bff05c8eaddfb4d248')
+  }
+}
+db.productos.find({precio:{$gt:100}})
+{
+  _id: ObjectId('672ff5bff05c8eaddfb4d244'),
+  nombre: 'Adidasforum',
+  precio: 3500,
+  categoria: 'Zapatillas'
+}
+{
+  _id: ObjectId('672ff5bff05c8eaddfb4d247'),
+  nombre: 'Garmin forerunner',
+  precio: 500,
+  categoria: 'Tecnologia'
+}
+{
+  _id: ObjectId('672ff5bff05c8eaddfb4d248'),
+  nombre: 'Coros Pace',
+  precio: 450,
+  categoria: 'Tecnologia'
+}
+db.productos.find().sort({precio:-1})
+{
+  _id: ObjectId('672ff5bff05c8eaddfb4d244'),
+  nombre: 'Adidasforum',
+  precio: 3500,
+  categoria: 'Zapatillas'
+}
+{
+  _id: ObjectId('672ff5bff05c8eaddfb4d247'),
+  nombre: 'Garmin forerunner',
+  precio: 500,
+  categoria: 'Tecnologia'
+}
+{
+  _id: ObjectId('672ff5bff05c8eaddfb4d248'),
+  nombre: 'Coros Pace',
+  precio: 450,
+  categoria: 'Tecnologia'
+}
+{
+  _id: ObjectId('672ff5bff05c8eaddfb4d246'),
+  nombre: 'Camiseta terrex',
+  precio: 80,
+  categoria: 'Sportwear'
+}
+{
+  _id: ObjectId('672ff5bff05c8eaddfb4d245'),
+  nombre: 'Top deportivo',
+  precio: 50,
+  categoria: 'Sportwear'
+}
+db.productos.uptadeMany({},{$set:{en_stock:true}})
+TypeError: db.productos.uptadeMany is not a function
+db.productos.uptadeMany({}, {$set:{en_stock: true}})
+TypeError: db.productos.uptadeMany is not a function
+db.productos.updateMany({}, { $set: { en_stock: true } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+db.productos.updateMany({precio:500}},{$set:{en_stock:false}})
+SyntaxError: Unexpected token, expected "," (1:36)
+
+> 1 | db.productos.updateMany({precio:500}},{$set:{en_stock:false}})
+    |                                     ^
+db.productos.updateMany({precio:{$gt:500}},{$set:{en_stock:false}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.productos.deleteMany({precio:{$lt:50}})
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+db.productos.aggregate([
+  {$group:{-id:"$categoria",precioPromedio:{$avg:"$precio"}}}])
+SyntaxError: Unexpected token (2:11)
+
+  1 | db.productos.aggregate([
+> 2 |   {$group:{-id:"$categoria",precioPromedio:{$avg:"$precio"}}}])
+    |            ^
+db.productos.aggregate([
+  {$group:{_id:"$categoria",precioPromedio:{$avg:"$precio"}}}])
+{
+  _id: 'Sportwear',
+  precioPromedio: 65
+}
+{
+  _id: 'Tecnologia',
+  precioPromedio: 475
+}
+{
+  _id: 'Zapatillas',
+  precioPromedio: 3500
+}
+db.productos.aggregate([
+  {$group:{_id:"$categoria",precioPromedio:{$avg:"$precio"}}},
+  {$sort:{precioPromedio:-1}},
+  {$limit:1}])
+{
+  _id: 'Zapatillas',
+  precioPromedio: 3500
+}
+db.productos.aggregate([
+  {
+    $group: {
+      _id: "$categoria",
+      precioPromedio: { $avg: "$precio" }
+    }
+  },
+  { $sort: { precioPromedio: -1 } },
+  { $limit: 1 }
+]);
+{
+  _id: 'Zapatillas',
+  precioPromedio: 3500
+}
+db.productos.aggregate([
+  {$group:{_id:"$categoria",precioPromedio:{$avg:"$precio"}}},
+  {$sort:{precioPromedio:-1}},
+  {$limit:1}])
+{
+  _id: 'Zapatillas',
+  precioPromedio: 3500
+}
+db.productos.aggregate([{$group:{_id:"$categoria",total:{$sum:1}}}])
+{
+  _id: 'Zapatillas',
+  total: 1
+}
+{
+  _id: 'Sportwear',
+  total: 2
+}
+{
+  _id: 'Tecnologia',
+  total: 2
+}
+db.productos.find({ nombre: { $regex: 'zapatillas', $options: 'i' }})
+db.productos.find({ nombre: { $regex: 'zapatillas', $options: 'i' }})
+db.productos.find({ nombre: { $regex: 'zapatillas', $options: 'i' }})
