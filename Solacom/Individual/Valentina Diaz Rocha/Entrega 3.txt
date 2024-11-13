@@ -1,0 +1,59 @@
+Entrega 3 
+Sustentación (taller practico )
+Taller como requisitos 
+(consultas) especificas 
+1 modulo grande 
+2 - modulo mas pequeño 
+(cada miembro método)
+-mongo shell desde editor de texto 
+solo permitido visual mongo y editor de texto express
+
+-traer en block de notas  de ejecución (estructura paso a paso) se pueden comandos no ejercicios 
+
+inserciones y modificaciones
+consulta general find()
+
+
+Entrega de proyecto por 3 métodos 
+min 10 consultas especificas 
+
+
+
+
+
+Notas tener en cuenta 
+como hacer util y config 
+
+revisar controller y funciones y el modelo (las rutas)
+SERVER.JS
+--back es visual
+--consola es mongoshell 
+node modules (revisar proyecto edxpress) 
+
+mkdir 
+acceder a la carpeta cuando se ejecuta express cd(node_modules dentro de la carpeta) 
+crear carpetas 
+
+
+compass (crear la base de datos con compasss)
+
+
+npm note package manangemend 
+
+en el user controller para eliminar datos (crear la función y un parámetro para que no llame dos vecs y la mande )
+
+
+funciones (java)
+
+declaración 
+anomimas 
+flecha 
+
+npm i 
+nodemon (compila automáticamente ) dev 
+
+arquitectura es la estructura de como se va aha realizar un proyetco 
+modelo vista controlador 
+
+
+post man es como interfaz que genera la ruta 
