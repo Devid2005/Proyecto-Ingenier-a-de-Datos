@@ -1,0 +1,37 @@
+use tienda_musica
+
+db.createCollection('artistas')
+
+db.createCollection('albumes')
+
+db.artistas.insertMany([{"Nombre":"The Beatles","Genero":"Rock","Pais":"Reino Unido"},{"Nombre":"Taylor Swift","Genero":"Pop","Pais":"Estados Unidos"},{"Nombre":"Shakira","Genero":"Latino","Pais":"Colombia"}])
+
+db.albumes.insertMany([{"Nombre":"Abbey Road","artista":"The Beatles","año":1969},{"Nombre":"1989","artista":"Taylor Swift","año":2014},{"Nombre":"El Dorado","artista":"Shakira","año":2017}])
+
+db.artistas.find()
+
+db.albumes.find({"artista":"The Beatles"})
+
+db.artistas.find({"Genero":"Pop"})
+
+db.albumes.find({"año":{$gte: 2000}})
+
+db.artistas.updateOne({"Nombre":"Shakira"},{$set:{"Pais":"España"}})
+
+db.albumes.updateMany({},{$set:{"Ventas":"true"}})
+
+db.albumes.updateOne({"Nombre":"1989"},{$set:{"Ventas":10000000}})
+
+db.artist.deleteOne({"Nombre":"The Beatles"})
+
+db.albumes.deleteMany({"año":{$lt:2000}})
+
+db.artistas.find({"Pais":"Estados Unidos"}
+
+db.albumes.aggregate([{$group:{_id:null,maxima:{$max:"album"}}}])
+
+db.albumes.find().sort().limit(1)
+
+// sin limitar porque hay dos con la misma cantidad
+
+db.albumes.find().sort()
