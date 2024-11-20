@@ -1,0 +1,92 @@
+Mongo
+1. Parte 1: Mongo Shell
+Tareas
+1. Creación de la Base de Datos y Colecciones
+• Crea una base de datos llamada tienda_musica.
+• Crea dos colecciones:
+• artistas: Contendrá información de los artistas.
+• albumes: Contendrá información de los álbumes.
+2. Inserta los siguientes documentos en las colecciones:
+Colección artistas:
+• The Beatles Rock Reino Unido
+• Taylor Swift Pop Estados Unidos
+• Shakira Latino Colombia
+Colección albumes:
+• Abbey Road The Beatles 1969
+• 1989 Taylor Swift 2014
+• El Dorado Shakira 2017
+3. Realiza las siguientes consultas:
+• Encuentra todos los documentos en la colección artistas.
+• Encuentra todos los álbumes de un artista específico.
+• Busca artistas de un género específico.
+• Encuentra álbumes lanzados después del año 2000.
+4. Actualiza documentos:
+• Cambia el país de Shakira a “España”.
+• Añade un nuevo campo ventas al álbum “1989” con un valor de 10000000.
+5. Elimina documentos:
+• Elimina el artista The Beatles.
+• Elimina todos los álbumes lanzados antes del año 2000.
+• Implementa una consulta para encontrar todos los artistas de un país.
+• Realiza una agregación para contar cuántos álbumes tiene cada artista.
+• Implementa una sentencia que devuelva el artista con más álbumes.
+
+
+
+
+
+Script Mongo Shell 
+
+
+
+use tienda_musica
+db.createCollection("artistas")
+db.createCollection("albumes")
+
+db.artistas.insertMany([
+{ nombre: "The Beatles", genero: "Rock", pais: "Reino Unido" },
+{ nombre: "Taylor Swift", genero: "Pop", pais: "Estados Unidos" },
+{ nombre: "Shakira", genero: "Latino", pais: "Colombia" }
+])
+db.albumes.insertMany([
+{ titulo: "Abbey Road", artista: "The Beatles", anio: 1969 },
+{ titulo: "1989", artista: "Taylor Swift", anio: 2014 },
+{ titulo: "El Dorado", artista: "Shakira", anio: 2017 }
+])
+ 
+db.artistas.find().pretty()
+db.albumes.find({ artista: "Taylor Swift" }).pretty()
+
+db.artistas.find({ genero: "Pop" }).pretty()
+
+
+db.albumes.find({ anio: { $gt: 2000 } }).pretty()
+
+db.artistas.updateOne(
+{ nombre: "Shakira" },
+{ $set: { pais: "España" } }
+)
+
+db.albumes.updateOne(
+{ titulo: "1989" },
+{ $set: { ventas: 10000000 } }
+)
+
+db.artistas.deleteOne({ nombre: "The Beatles" })
+
+
+db.albumes.deleteMany({ anio: { $lt: 2000 } })
+
+
+db.artistas.find({ pais: "Estados Unidos" }).pretty()
+
+
+db.albumes.aggregate([
+{ $group: { _id: "$artista", total_albumes: { $sum: 1 } } }
+])
+
+db.albumes.aggregate([
+{ $group: { _id: "$artista", total_albumes: { $sum: 1 } } },
+{ $sort: { total_albumes: -1 } },
+{ $limit: 1 }
+])
+
