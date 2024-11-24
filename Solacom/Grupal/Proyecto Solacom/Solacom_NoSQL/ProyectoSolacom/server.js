@@ -8,6 +8,7 @@ import productoRoutes from './routes/productoRoutes.js'
 import pedidoProvedorRoutes from './routes/pedidoProvedorRoutes.js'
 import pedidoClienteRoutes from './routes/pedidoClienteRoutes.js'
 import clienteRoutes from './routes/clienteRoutes.js'
+import rqfRoutes from './routes/rqfRoutes.js'
 
 config()
 
@@ -27,6 +28,9 @@ connectDatabase()
 const server = express()
 const Port = process.env.PORT
 
+server.use(express.json({ limit: '10mb' }));
+server.use(express.urlencoded({ limit: '10mb', extended: true }));
+
 server.use(express.urlencoded({extended:true}));
 server.use(express.static('public')); // cuando hay interfaz grafica
 
@@ -39,6 +43,7 @@ server.use(productoRoutes)
 server.use(pedidoProvedorRoutes)
 server.use(pedidoClienteRoutes)
 server.use(clienteRoutes)
+server.use(rqfRoutes)
 
 server.listen(Port, ()=> console.log(`server running in port ${Port}`))
 

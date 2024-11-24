@@ -1,7 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
 const provedorSchema = new Schema({
-    IdProvedor: String,
     NombreProvedor: String
 })
 

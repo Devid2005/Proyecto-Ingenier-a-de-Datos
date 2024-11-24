@@ -1,9 +1,8 @@
 import mongoose, { Schema } from "mongoose";
 
 const pedidoClienteSchema = new Schema({
-    IdPedidoC: Number,
-    FechaPedido: Date,
-    IdCliente: Number,
+    FechaPedido: String,
+    IdCliente: String,
     IdUsuario: Number,
     Estado: { type: String, default: 'Pendiente' } ,// Estado del pedido: Pendiente, Entregado, Cancelado
     producto: String,

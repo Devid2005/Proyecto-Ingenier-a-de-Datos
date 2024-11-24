@@ -1,10 +1,10 @@
 import { Router } from 'express'
-import { Crearcliente, obtenerClientes, EditarCliente, EliminarCliente} from "../controller/clienteController.js";
+import { CrearCliente, obtenerCliente, EditarCliente, EliminarCliente} from "../controller/clienteController.js";
 const router = Router()
 
-router.get('/Clientes', obtenerClientes)
-router.post('/Clientes', Crearcliente)
-router.put('/Clientes', EditarCliente)
-router.delete('/Clientes', EliminarCliente)
+router.get('/Clientes', obtenerCliente)
+router.post('/Clientes', CrearCliente)
+router.put('/Clientes/:id', EditarCliente)
+router.delete('/Clientes/:id', EliminarCliente)
 
 export default router;
