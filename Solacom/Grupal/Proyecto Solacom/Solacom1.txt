@@ -1,0 +1,86 @@
+use solacom 1
+db.createCollection('Clientes')
+db.createCollection('usuarios')
+db.createCollection('servicios')
+db.createCollection('provedors')
+db.createCollection('productos')
+db.createCollection('pedidos')
+db.createCollection('pedidoclientes')
+
+db.usuarios.insertMany([{"
+IdUsuario": 1,"NombreUsuario":"NovaTech Solutions","EmailUsuario":"nova.tech@gmail.com","RolUsuario": "Cliente"},{"
+IdUsuario": 2,"NombreUsuario":"QuantumLeap Inc","EmailUsuario":"quantum@hotmail.com","RolUsuario": "Cliente"},{"
+IdUsuario": 3,"NombreUsuario":"NorthStar Enterprises","EmailUsuario":"northS@gmail.com","RolUsuario": "Cliente"},{"
+IdUsuario": 1001,"NombreUsuario":"Alejandro","EmailUsuario":"alejandro@gmail.com","RolUsuario": "Solacom"},{"
+IdUsuario": 1002,"NombreUsuario":"Sandra","EmailUsuario":"sandra@gmail.com","RolUsuario": "Solacom},{"
+IdUsuario": 1003,"NombreUsuario":"Omar","EmailUsuario":"omar@gmail.com","RolUsuario": "Solacom},{"
+IdUsuario": 101,"NombreUsuario":"Daniel","EmailUsuario":"daniel@gmail.com","RolUsuario": "Administrador},{"
+IdUsuario": 102,"NombreUsuario":"David","EmailUsuario":"david@gmail.com","RolUsuario": "Administrador},{"
+IdUsuario": 4,"NombreUsuario":"Morgan County EMA","EmailUsuario":"911coordinator@morgancounty-oh.gov","RolUsuario": "Cliente"},{"
+IdUsuario": 5,"NombreUsuario":"Albo (banco digital)","EmailUsuario":"albo@albo.com","RolUsuario": "Cliente"}])
+
+db.usuarios.find({"IdUsuario": 5})
+db.usuarios.updateOne({"_id":"673644ae2ff884735aa878d6"},{$set:{"NombreUsuario": "Prueba" }})
+
+db.servicios.insertOne([{"IdServicio":"SC001","IdPedidoC":"100001","NombreServicio":"Servicios de Ciberseguridad","DescripcionServicio":"SC"}])
+
+db.servicios.insertOne([{"IdServicio":"SC002","IdPedidoC":"100002","NombreServicio":"Servicios de Ciberseguridad","DescripcionServicio":"SC"}])
+
+db.servicios.insertOne([{"IdServicio":"SC003","IdPedidoC":"100003","NombreServicio":"Servicios de Ciberseguridad","DescripcionServicio":"SC"}])
+
+db.servicios.insertOne([{"IdServicio":"SC004","IdPedidoC":"100004","NombreServicio":"Servicios de Ciberseguridad","DescripcionServicio":"SC"}])
+
+db.servicios.insertOne([{"IdServicio":"RP001","IdPedidoC":"100005","NombreServicio":"Repuestos y Pedidos","DescripcionServicio":"RP"}])
+
+db.servicios.insertOne([{"IdServicio":"RP002","IdPedidoC":"100006","NombreServicio":"Repuestos y Pedidos","DescripcionServicio":"RP"}])
+
+db.servicios.insertOne([{"IdServicio":"RP003","IdPedidoC":"100007","NombreServicio":"Repuestos y Pedidos","DescripcionServicio":"RP"}])
+
+db.servicios.insertOne([{"IdServicio":"AC001","IdPedidoC":"100008","NombreServicio":"Atencion al cliente","DescripcionServicio":"AC"}])
+
+db.servicios.insertOne([{"IdServicio":"AC002","IdPedidoC":"100009","NombreServicio":"Atencion al cliente","DescripcionServicio":"AC"}])
+
+db.servicios.insertOne([{"IdServicio":"AC003","IdPedidoC":"100010","NombreServicio":"Atencion al cliente","DescripcionServicio":"AC"}])
+
+db.servicios.find({"IdUsuario": 5})
+db.servicios.updateOne({"_id":"673644ae2ff884735aa878d6"},{$set:{"NombreServicio": "Servicio de ciberseguridad" }})
+
+db.productos.insertOne([{"HarmonizedCode":"SDM0008DD91","NombreProducto":"1.6 GB SSD HARD DRIVE – COMPUTER PERIPHERAL DEVICE – INTERNAL COMPONENT"}])
+
+db.productos.insertOne([{"HarmonizedCode":"MZPLL3T2HAJQ-0005","NombreProducto":"2 TB HDD HARD DRIVE – COMPUTER PERIPHERAL DEVICE – INTERNAL COMPONENT"}])
+
+db.productos.insertOne([{"HarmonizedCode":"ICMPP024T21","NombreProducto":"2-SR1 RJ45- PATCH PANEL 24 – PROTECTING CIRCUITS","PrecioProducto":300}])
+
+db.productos.insertOne([{"HarmonizedCode":"AX210","NombreProducto":"255-1066-ND – ELECTRICAL APARTUS FOR SWITCHING OR PROTECTING CIRCUITS","PrecioProducto":400}])
+
+db.productos.insertOne([{"HarmonizedCode":"DSE-SL2LDCSV","NombreProducto":"255-1066-ND – ELECTRICAL APARTUS FOR SWITCHING OR PROTECTING CIRCUITS"}])
+
+db.pedidoProveedores.insertOne([{"IdPedidoP":1003,"FechaPedido":"3/07/2024","IdProveedor":1003,"Estado":"Pendiente","NombreProducto":"2-SR1 RJ45- PATCH PANEL 24 – PROTECTING CIRCUITS"}])
+
+db.pedidoProveedores.insertOne([{"IdPedidoP":1004,"FechaPedido":"4/07/2024","IdProveedor":1004,"Estado":"Pendiente","NombreProducto":"255-1066-ND"}])
+
+db.pedidoProveedores.insertOne([{"IdPedidoP":1005,"FechaPedido":"5/07/2024","IdProveedor":1001,"Estado":"Pendiente","NombreProducto":"255-1066-ND"}])
+
+db.pedidoProveedores.insertOne([{"IdPedidoP":1006,"FechaPedido":"1/07/2024","IdProveedor":1002,"Estado":"Pendiente","NombreProducto":"32GB USB DRIVE"}])
+
+db.pedidoProveedores.insertOne([{"IdPedidoP":1007,"FechaPedido":"2/07/2024","IdProveedor":1003,"Estado":"Pendiente","NombreProducto":"3U RMS CHASSIS"}])
+
+db.pedidoClientes.insertOne([{"IdPedidoP":100001,"FechaPedido":"1/08/2024","IdCliente":"NT001","IdUsuario":1,"Estado":"Pendiente","NombreProducto":"2-SR1 RJ45- PATCH PANEL 24 – PROTECTING CIRCUITS"}])
+
+db.pedidoClientes.insertOne([{"IdPedidoP":100002,"FechaPedido":"1/08/2024","IdCliente":"QL002","IdUsuario":2,"Estado":"Pendiente","NombreProducto":"255-1066-ND"}])
+
+db.pedidoClientes.insertOne([{"IdPedidoP":100003,"FechaPedido":"1/08/2024","IdCliente":"NSE003","IdUsuario":3,"Estado":"Pendiente","NombreProducto":"3U RMS CHASSIS"}])
+
+db.pedidoClientes.insertOne([{"IdPedidoP":100004,"FechaPedido":"1/08/2024","IdCliente":"CSC004","IdUsuario":4,"Estado":"Pendiente","NombreProducto":"32GB USB DRIVE"}])
+
+db.pedidoClientes.insertOne([{"IdPedidoP":100005,"FechaPedido":"2/08/2024","IdCliente":"DS005","IdUsuario":5,"Estado":"Pendiente","NombreProducto":"2 TB HDD HARD DRIVE"}])
+
+db.clientes.insertOne([{"IdCliente":"NT001","NombreCliente":"NovaTech Solutions","Direccion":"123 Silicon Valley Blvd, San Francisco, CA","Email":"novatech@gmail.com"}])
+
+db.clientes.insertOne([{"IdCliente":"QL002","NombreCliente":"QuantumLeap Inc","Direccion":"456 Innovation Drive, Toronto, ON","Email":"quantum@gmail.com"}])
+
+db.clientes.insertOne([{"IdCliente":"NSE003","NombreCliente":"QuantumLeap Inc","Direccion":"789 Main Street, Seattle, WA","Email":"norths@gmail.com"}])
+
+db.clientes.insertOne([{"IdCliente":"CSC004","NombreCliente":"CyberShield Corp","Direccion":"110 Cyber Avenue, Ottawa, ON","Email":"cyberShield@gmail.com"}])
+
+db.clientes.insertOne([{"IdCliente":"DS005","NombreCliente":"DataStream Inc","Direccion":"220 Data Drive, Vancouver, BC","Email":"datas@gmail.com"}])
